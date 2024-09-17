@@ -4,7 +4,7 @@ import Sidebar from '../../components/layout/Sidebar';
 import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 
-const instructorLayout = ({ children }: { children: React.ReactNode }) => {
+const InstructorLayout = ({ children }: { children: React.ReactNode }) => {
   const { userId } = auth();
 
   if (!userId) {
@@ -12,7 +12,7 @@ const instructorLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-screen flex-col">
       <TopBar />
       <div className="flex flex-1">
         <Sidebar />
@@ -22,4 +22,4 @@ const instructorLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default instructorLayout;
+export default InstructorLayout;

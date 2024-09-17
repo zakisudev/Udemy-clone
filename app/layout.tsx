@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
+import ToasterProvider from '../components/providers/ToasterProvider';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -30,7 +31,10 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          {children}
+          <div className="max-w-[1440px] w-full mx-auto">
+            {children}
+            <ToasterProvider />
+          </div>
         </body>
       </html>
     </ClerkProvider>
