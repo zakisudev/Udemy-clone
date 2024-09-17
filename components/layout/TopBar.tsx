@@ -32,7 +32,7 @@ const TopBar = () => {
         <button
           className="bg-[#fdab04] rounded-r-full border none outline-none cursor-pointer px-4 py- hover:bg-[#fdab04]/80"
           type="button"
-          onClick={''}
+          onClick={() => {}}
         >
           <Search className="h-4 w-4" />
         </button>
