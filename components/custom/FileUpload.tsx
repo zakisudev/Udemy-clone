@@ -13,6 +13,7 @@ interface FileUploadProps {
 }
 
 const FileUpload = ({ value, onChange, endpoint, page }: FileUploadProps) => {
+  console.log(endpoint)
   return (
     <div className="flex flex-col gap-2">
       {page === 'Edit Course' && value !== '' && (
@@ -27,12 +28,15 @@ const FileUpload = ({ value, onChange, endpoint, page }: FileUploadProps) => {
           />
         </>
       )}
+      {page === 'Edit Section' && value !== '' && (
+        <p className="text-sm font-medium">{value}</p>
+      )}
 
       <UploadDropzone
         endpoint={endpoint}
         onClientUploadComplete={(res) => {
-          if (res && res.length > 0) {
-            onChange(res?.[0].url);
+          if (res && res?.url) {
+            onChange(res?.url);
           }
         }}
         onUploadError={(error: Error) => {
