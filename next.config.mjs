@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      { hostname: 'sea1.ingest.uploadthing.com' },
+      { hostname: '*.uploadthing.com' },
       { hostname: 'utfs.io' },
       { hostname: 'img.clerk.com' },
     ],
