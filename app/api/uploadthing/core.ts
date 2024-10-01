@@ -20,6 +20,18 @@ export const uploadRouter = {
     .onUploadComplete(() => {
       console.log('upload completed');
     }),
+
+  sectionVideo: f({ video: { maxFileSize: '1024MB', maxFileCount: 1 } })
+    .middleware(handleAuth)
+    .onUploadComplete(() => {
+      console.log('upload completed');
+    }),
+
+  sectionResource: f(['text', 'image', 'video', 'audio', 'pdf'])
+    .middleware(handleAuth)
+    .onUploadComplete(() => {
+      console.log('upload completed');
+    }),
 } satisfies FileRouter;
 
 export type OurFileRouter = typeof uploadRouter;
